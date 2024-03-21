@@ -1,0 +1,55 @@
+.burger-menu__wrapper {
+    background-color: $color-background-body;
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 102%;
+    // height: 70rem;
+    height: 100vh;
+    top: 9rem;
+    right: -99rem;
+    z-index: 3;
+    @include font($size: 3.2rem, $style: normal, $weight: 600, $height: 125%);
+    @extend %transitionModals;
+  }
+  
+  .burger-menu__wrapper.active {
+    opacity: 1;
+    right: 0rem;
+    margin: 0 auto;
+    @extend %transition;
+  }
+
+.burger-header__navigation .navigation {
+  @include font($size: 3.2rem, $style: normal, $weight: 600, $height: 125%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6rem;
+  margin-top: 7rem;
+  margin-bottom: 10rem;
+}
+
+.burger-primary-button__wrapper {
+  @include font($size: 3.2rem, $style: normal, $weight: 600, $height: 125%);
+  display: flex;
+  align-items: flex-start;
+  .button-primary span {
+    padding-right: 13px;
+  }
+}
+
+.burger-primary-button__wrapper .button-primary span {
+  @include font($size: 3.2rem, $style: normal, $weight: 600, $height: 125%);
+}
+.burger-primary-button__wrapper .button-primary img {
+  height: 4rem;
+}
+//disable button
+.burger-menu-primary__wrapper{
+    pointer-events: none;
+}

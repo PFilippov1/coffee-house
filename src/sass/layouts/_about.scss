@@ -1,0 +1,89 @@
+@mixin media-tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin media-hover {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+.about__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 4rem;
+  margin-bottom: 100px;
+}
+
+.about-img {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 39px;
+  justify-content: center;
+}
+
+.box {
+  max-width: 66rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  border-radius: 2rem;
+  flex-shrink: 0;
+  @include media-tablet {
+    max-width: 95%;
+  }
+  @include media-mobile {
+    max-width: 34.8rem;
+  }
+}
+.box img {
+  min-width: 100%;
+  min-height: 100%;
+  flex-shrink: 0;
+  @extend %transition;
+  transform: scale(1);
+}
+
+.box1 {
+  height: 59rem;
+}
+.box2 {
+  height: 43rem;
+  @include media-tablet {
+    display: none;
+  }
+}
+
+.box3 {
+  height: 43rem;
+  @include media-tablet {
+    display: none;
+  }
+}
+.box4 {
+  height: 59rem;
+  // its better to change this later
+  margin-top: -16rem;
+  @include media-tablet {
+    margin-top: 0rem;
+  }
+}
+
+.box:hover {
+  @include media-hover {
+    img {
+      transform: scale(0.91);
+      transition: all 0.3s ease-out;
+      // @extend %transition;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap");
+// Abstract Constant Text-Decoration
+@import "abstract/constant.scss";
+@import "abstract/text-decoration";
+@import "abstract/mixins";
+@import "abstract/placeholder";
+@import "abstract/media";
+//Base
+@import "base/base";
+@import "base/buttons.scss";
+@import "base/hamburger.scss";
+//Layouts
+@import "layouts/wrapper";
+@import "layouts/header";
+@import "layouts/slider";
+@import "layouts/hero";
+@import "layouts/about";
+@import "layouts/menu";
+@import "layouts/burgerMenu";
+//Components
+@import "component/contact-us.scss";
+@import "component/mobileapp.scss";
+@import "component/navigation.scss";
+@import "component/menu-content.scss";
+@import "component/modal.scss";
+
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+// html {
+//   scroll-behavior: smooth;
+//   font-size: 10px;
+// }
+
+// body {
+//   font-family: "Inter", Verdana, sans-serif;
+//   font-size: 1.6rem;
+// }
+
+/* .left-button:hover {
+  background-color:#b11818;
+  .arrow-left img {
+    fill: rgb(221, 255, 0);
+  }
+} */
+
+/* .left-button:hover {
+  background-color: #a88080;
+}
+
+.left-button:hover .arrow-left img {
+  fill: rgb(221, 255, 0) !important;
+  stroke:  rgb(221, 255, 0) !important;
+} */
+/* .arrow-left {
+  background-image: url(/asset/img/icon/arrow-left.svg);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  color: rgb(226, 104, 43);  
+} */
+
+
+
+
+

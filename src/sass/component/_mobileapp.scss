@@ -1,0 +1,54 @@
+@mixin media-tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+.mobileapp-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 9.9rem;
+  flex: 1 0 0;
+  margin-bottom: 100px;
+  @include media-mobile {
+    gap: 4rem;
+  }
+}
+
+.app__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 63rem;
+  gap: 4rem;
+  @include media-tablet {
+    max-width: 69rem;
+  }
+}
+
+.mobile-img {
+  content: url(asset/img/mobile-screens.png);
+  display: inline-flex;
+  align-items: center;
+  // align-content: center;
+  max-width: 100%;
+  height: 63rem;
+  background: no-repeat center;
+  background-size: cover;
+  // object-fit: cover;
+  // background: no-repeat;
+
+  // background-repeat: no-repeat;
+  // background-size: 50% 50%;
+  // background-position: center center;
+  // width: 63rem;
+  // height: 63rem;
+  // display: inline-flex;
+  // align-items: center;
+  @include media-mobile {
+    width: 34.8rem;
+    height: 34.8rem;
+  }
+}

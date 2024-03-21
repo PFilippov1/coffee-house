@@ -1,0 +1,16 @@
+%transition {
+  transition: all 0.3s ease-out;
+}
+
+%transitionModals {
+  transition: all 0.5s ease-in-out;
+}
+
+%cursive-colored-text {
+  font-style: italic;
+  color: $color-text-accent;
+}
+
+%cursive-text {
+    font-style: italic;
+  }

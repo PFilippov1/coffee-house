@@ -1,0 +1,30 @@
+html{
+  background-color: $color-background-body;
+}
+.wrapper {
+  max-width: $content-width;
+  // padding-top: 2rem;
+  padding-bottom: 4rem;
+  margin: 0 auto;
+  background-color: $color-background-body;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100vh;
+
+  @include media-tablet{
+    max-width: $tablet-width;
+    padding: 0 4rem;
+  }
+
+  @include media-mobile{
+    max-width: $tablet-width;
+    padding: 0 1.6rem;
+  }
+
+}
+
+.footer {
+  margin-top: auto;
+}

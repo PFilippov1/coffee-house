@@ -1,0 +1,29 @@
+.navigation {
+    display: flex;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+  }
+  
+  .navigation__link {
+    list-style: none;
+    color: $color-text-dark;
+    padding: 0 20px;
+    cursor: pointer;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: $color-text-dark;
+  }
+
+  .header__navigation{
+        @include media-tablet {
+        @media (max-width: $tablet-width) {
+          display: none;
+        }
+      }
+  }
+
+ 

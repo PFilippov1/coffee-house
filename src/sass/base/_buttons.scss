@@ -1,0 +1,268 @@
+//main button
+.button-primary__wrapper {
+  display: flex;
+  align-items: flex-start;
+  @extend %transition;
+  &:hover {
+    .cup_appearing {
+      opacity: 1;
+    }
+  }
+}
+
+.button-primary {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  border: none;  
+  background-color: $color-background-body;
+  font-family: Inter;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  @extend %transition;
+  cursor: pointer;
+  span {
+    padding-right: 4px;
+    color: $color-text-dark;
+    @include font($size: 1.6rem, $style: normal, $weight: 600, $height: 150%);
+  }
+  img {
+    padding-left: 4px;
+  }
+}
+
+.cup-button_wrapper {
+  display: flex;
+  width: 20rem;
+  height: 6.4rem;
+  padding: 2rem 7.8rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rem;  
+  background-color: $color-background-body;
+  font-family: Inter;
+  position: relative;
+  @extend %transition;
+  cursor: pointer;
+  &:hover {
+    .cup_appearing {
+      opacity: 1;
+    }
+    .button-primary__with-cup span {
+      position: absolute;
+      left: 39%;
+      transform: translateX(-20%);
+      z-index: 1;
+    }
+  }
+}
+
+.cup_appearing {
+  @extend %transition;
+  opacity: 0;
+  position: absolute;
+  right: 30%;
+}
+
+.button-primary__with-cup span {
+  transition: inherit;
+  position: absolute;
+  left: 39%;
+  z-index: 1;
+}
+
+.next-page.link__underline {
+  @include media-tablet {
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+}
+
+.menu-page.link__underline {
+  @include media-tablet {
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+}
+
+//media for tablet
+
+@media (max-width: 769px) {
+  .button-primary__with-cup span {
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  .cup_appearing {
+    position: static !important;
+    display: block !important;
+    opacity: 1 !important;
+  }
+}
+
+//menu button disable pointer-events
+
+.main-page.active {
+  pointer-events: none;
+}
+
+.menu-page.link__underline.active {
+  pointer-events: none;
+}
+
+//arrow button
+
+@mixin media-tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+.arrow__button {
+  background-color: $color-background-body;
+  display: flex;
+  width: 6rem;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter;
+  border-radius: 10rem;
+  border: 1px solid $color-border-dark;
+  @extend %transition;
+  &:hover {
+    @include media-hover {
+      background-color: $color-background-container;
+      .vector {
+        stroke: $color-text-light !important;
+        fill: $color-text-light !important;
+      }
+    }
+  }
+  @include media-mobile {
+    display: none;
+  }
+}
+
+.arrow-left {
+  width: 2rem;
+  height: 2rem;
+}
+
+.arrow-right {
+  width: 2rem;
+  height: 2rem;
+}
+
+.arrow__button {
+  position: absolute;
+  top: 54%;
+  transform: translateY(-50%);
+  z-index: 1;
+  @include media-tablet {
+    top: 58.3%;
+  }
+}
+
+.left-button {
+  left: 0px;
+}
+
+.right-button {
+  right: 0px;
+}
+
+// store app button
+.button-store__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  @include media-mobile {
+    flex-wrap: wrap;
+  }
+}
+
+.store__button {
+  display: flex;
+  width: 20rem;
+  padding: 12px 20px;
+  align-items: center;
+  border: 1px solid $color-border-dark;
+  border-radius: 10rem;
+  gap: 8px;
+  cursor: pointer;
+  background-color: $color-background-body;
+  @extend %transition;
+  &:hover {
+    @include media-hover {
+      background-color: $color-background-container;
+      .icon-fill {
+        fill: $color-text-light !important;
+      }
+      .small-text {
+        color: $color-text-light;
+      }
+      .bigger-text {
+        color: $color-text-light;
+      }
+    }
+  }
+}
+
+.button-describe__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.small-text {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 14px */
+  color: $color-text-dark;
+  @extend %transition;
+}
+
+.bigger-text {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+  color: $color-text-dark;
+  @extend %transition;
+}
+
+// social icon button
+
+.social-icons__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.button-icon-light {
+  display: flex;
+  width: 6rem;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rem;
+  @extend %transition;
+  cursor: pointer;
+  border: 1px solid $color-border-light;
+  background-color: $color-background-container;
+  &:hover {
+    @include media-hover {
+      background-color: $color-background-body;
+      .social-stroke {
+        stroke: $color-text-dark !important;
+      }
+    }
+  }
+}

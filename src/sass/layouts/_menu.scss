@@ -1,0 +1,99 @@
+@mixin media-hover {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+.container__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.offer__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  @include media-mobile {
+    gap: 3.8rem;
+  }
+}
+.slogan-coffee {
+  max-width: 80rem;
+  text-align: center;
+  padding-top: 4px;
+}
+//menu buttons
+
+.coffee-button__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 16px;
+  @include media-mobile {
+    gap: 7px;
+  }
+}
+
+.tab-button {
+  display: flex;
+  padding: 8px 16px 8px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10rem;
+  background-color: $color-background-body;
+  border: 1px solid $color-border-light;
+  color: $color-text-dark;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+  cursor: pointer;
+  @extend %transition;
+  &:hover {
+    @include media-hover {
+      background-color: $color-background-container;
+      color: $color-text-light;
+      .icon__face img {
+        background-color: $color-background-body;
+      }
+    }
+  }
+}
+
+.icon__face img {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  padding: 3px 7px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background-color: $color-border-light;
+}
+
+.tab-button.active {
+  pointer-events: none;
+  background-color: $color-background-container;
+  color: $color-text-light;
+  .icon__face img {
+    background-color: $color-background-body;
+  }
+}
+
+//for modal
+.additives__wrapper{
+  .tab-button.active {
+    pointer-events: auto;
+     }
+}
+
